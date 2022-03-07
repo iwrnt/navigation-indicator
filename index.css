@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --body-background: #3E497A;
+    --background: #21325E;
+    --accent: #F1D00A;
+    --foreground: #F0F0F0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--body-background);
+}
+
+.navigation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    border-radius: .75em;
+    width: 480px;
+    height: 64px;
+}
+
+.navigation ul {
+    display: flex;
+    width: 450px;
+}
+
+.navigation ul li {
+    list-style: none;
+    width: 90px;
+    height: 64px;
+    z-index: 1;
+}
+
+.navigation ul li a {
+    color: var(--foreground);
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navigation ul li a .icon {
+    line-height: 72px;
+    transition: .5s;
+}
+
+.navigation ul li:hover a .icon {
+    transform: translateY(-2rem);
+}
+
+.navigation ul li.active a .icon {
+    transform: translateY(-2rem);
+    color: var(--background);
+}
+
+.navigation ul li a .text {
+    font-size: 12px;
+    opacity: 0;
+    transition: .5s;
+    letter-spacing: 2px;
+}
+
+.navigation ul li:hover a .text {
+    opacity: 1;
+    transform: translateY(-2.25rem);
+}
+
+.navigation ul li.active a .text {
+    opacity: 1;
+    transform: translateY(-2.75rem);
+}
+
+#indicator {
+    position: absolute;
+    top: -26px;
+    left: 36px;
+    width: 48px;
+    height: 48px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    border: .2rem solid var(--body-background);
+}
